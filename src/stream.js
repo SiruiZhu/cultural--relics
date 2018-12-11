@@ -66,7 +66,7 @@ var lines = [-1900, -1500, -1000, -500, 1, 500, 1000, 1500, 1900]
 
 function ready([datapoints, datapoints_all]) {
   // console.log('Datapoints look like', datapoints)
-  console.log('Datapoints_all look like', datapoints_all)
+  // console.log('Datapoints_all look like', datapoints_all)
 
   datapoints.forEach(d => {
     d.era_order = + d.era_order
@@ -104,12 +104,12 @@ function ready([datapoints, datapoints_all]) {
     })
     .entries(datapoints)
 
-  console.log('nested classification look like', nested_type)
+  // console.log('nested classification look like', nested_type)
 
 
   // TODO add an offset
   var keys = Object.keys(wide[0]).filter(col => col !== 'era_year')
-  console.log(keys)
+  // console.log(keys)
 
   var stack = d3.stack()
     .keys(keys)
@@ -125,7 +125,7 @@ function ready([datapoints, datapoints_all]) {
     d3.max(layers, layer => d3.max(layer, d => d[1]))
   ])
 
-  console.log('All datapoints are', datapoints_all)
+  // console.log('All datapoints are', datapoints_all)
 
 
   svg
@@ -187,7 +187,7 @@ function ready([datapoints, datapoints_all]) {
     })
     .entries(datapoints_filtered)
 
-  console.log('Datapoints_all nested year look like', nested_year)
+  // console.log('Datapoints_all nested year look like', nested_year)
 
     svg
        .selectAll('.circles-group')
@@ -205,7 +205,7 @@ function ready([datapoints, datapoints_all]) {
           .enter()
           .append('circle') 
           .attr('class', d=> {
-            console.log(d.name_en.replace(' ', '-').toLowerCase())
+            // console.log(d.name_en.replace(' ', '-').toLowerCase())
             return d.name_en.replace(' ', '-').toLowerCase()
             })
           .classed('circles', true)
@@ -316,7 +316,7 @@ function ready([datapoints, datapoints_all]) {
 
       var yAxis = d3.axisLeft(yPositionScale)
                     .tickFormat(function(d) {
-                      console.log(d)
+                      // console.log(d)
                       if (d === 60 ) {
                          return d + "%"
                       } else {
@@ -378,7 +378,6 @@ function ready([datapoints, datapoints_all]) {
    })
 
    d3.select('#gugong').on('stepin', ()=> {
-    console.log('I am step into gugong')
     // svg.selectAll('.circles').transition().style('visibility', 'hidden')
     svg.selectAll('.relics').style('pointer-events', 'none')
     // svg.selectAll('.image').style('visibility', 'visible')
@@ -414,8 +413,6 @@ function ready([datapoints, datapoints_all]) {
    })
 
    d3.select('#changcheng').on('stepin', ()=> {
-    console.log('I am step into changcheng')
-
     svg.selectAll('.relics').style('pointer-events', 'none')
     svg.selectAll('.firstbatch')
        .attr('opacity', 0)
