@@ -220,17 +220,30 @@ function ready([datapoints, datapoints_all]) {
            return (height/2 - i * 8)
          })
          .attr('fill', '#942121') 
-       }) 
-       .style('visibility', 'hidden')
 
-    svg
-       .append('circle')
-       .attr('class', 'image')
-       .attr('r', 60)
-       .attr('cx', xPositionScale(700))
-       .attr('cy', 60)
-       .attr('fill', 'red')
-       .style('visibility', 'hidden')
+          g
+          .selectAll('.circles-label')
+          .data(datapoints)
+          .enter()
+          .append('text')
+          .text(d=> d.name_en)
+          .attr('class', d=> {
+            // console.log(d.name_en.replace(' ', '-').toLowerCase())
+            return 'label' + d.name_en.replace(' ', '-').toLowerCase()
+            })
+          .classed('circles-label', true)
+         .attr('x', xPositionScale(d.key))
+         .attr('dx', -20)
+         .attr('dy', 20)
+         .attr('text-anchor', 'start')
+         .attr('y', height/2) 
+         .attr('fill', 'black')
+         .attr('font-size', 12)
+
+       }) 
+         .style('visibility', 'hidden')
+
+
 
 // legend part
       let legend = svg.append('g').attr('transform', 'translate(10, 0)')
@@ -247,8 +260,8 @@ function ready([datapoints, datapoints_all]) {
           g.append('rect')
             .attr('x', 10)
             .attr('y', 0)
-            .attr('width', 6)
-            .attr('height', 6)
+            .attr('width', 8)
+            .attr('height', 8)
             .attr('fill', colorScale(d.key))
 
           g.append('text')
@@ -361,7 +374,12 @@ function ready([datapoints, datapoints_all]) {
           .attr('cy', (d,i) => {
            return (height/2 - i * 8)
          })
-          .attr('fill', '#942121')        
+          .attr('fill', '#942121') 
+
+         g
+          .selectAll('.circles-label')
+          .style('visibility', 'hidden')
+
        }) 
 
     svg.selectAll('.circles')
@@ -369,8 +387,8 @@ function ready([datapoints, datapoints_all]) {
         div.transition().style('opacity', 0.9)
         div
           .html(d.name_en + '<br>' + d.era_en)
-          .style('left', d3.event.pageX + 'px')
-          .style('top', d3.event.pageY - 28 + 'px')    
+          .style('left', d3.event.pageX + 10 + 'px')
+          .style('top', d3.event.pageY - 28 + 'px') 
        })
       .on('mouseout', function(d, i) {
         div.transition().style('opacity', 0)
@@ -384,7 +402,16 @@ function ready([datapoints, datapoints_all]) {
    svg.selectAll('.firstbatch')
        .attr('opacity', 0)
        .attr('cy', 0)
-       .transition()  
+       .transition() 
+
+   svg.selectAll('.circles-label') 
+      .attr('opacity', 0)
+      .transition() 
+
+   svg.selectAll('.labelforbidden-city') 
+      .style('visibility', 'visible')
+      .attr('opacity', 1)
+
   // svg.selectAll('.summer-palace')
   //      .attr('opacity', 0)
   //      .attr('cy', 0)
@@ -404,12 +431,13 @@ function ready([datapoints, datapoints_all]) {
         div.transition().style('opacity', 0.9)
         div
           .html(d.name_en + '<br>' + d.era_en)
-          .style('left', d3.event.pageX + 'px')
+          .style('left', d3.event.pageX + 10 + 'px')
           .style('top', d3.event.pageY - 28 + 'px')    
        })
       .on('mouseout', function(d, i) {
         div.transition().style('opacity', 0)
-      })         
+      })   
+
    })
 
    d3.select('#changcheng').on('stepin', ()=> {
@@ -419,6 +447,11 @@ function ready([datapoints, datapoints_all]) {
        .attr('cy', 0)
        .transition()  
 
+
+   svg.selectAll('.labelforbidden-city') 
+      .attr('opacity', 0)
+      .transition()  
+
     svg.selectAll('.summer-palace')
        .style('visibility', 'visible')
        .raise()
@@ -427,6 +460,11 @@ function ready([datapoints, datapoints_all]) {
        .attr('cy', height/2)
        .attr('fill', '#942121')
        .attr('r', 6)
+
+   svg.selectAll('.labelsummer-palace') 
+      .style('visibility', 'visible')
+      .attr('opacity', 1)
+
 
 
     svg.selectAll('.forbidden-city')
@@ -439,7 +477,7 @@ function ready([datapoints, datapoints_all]) {
         div.transition().style('opacity', 0.9)
         div
           .html(d.name_en + '<br>' + d.era_en)
-          .style('left', d3.event.pageX + 'px')
+          .style('left', d3.event.pageX + 10 + 'px')
           .style('top', d3.event.pageY - 28 + 'px')    
        })
       .on('mouseout', function(d, i) {

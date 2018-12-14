@@ -2,7 +2,7 @@ import * as d3 from 'd3'
 import * as topojson from 'topojson'
 
 
-  let margin = { top: 20, left: 80, right: -12, bottom: 20 }
+  let margin = { top: 50, left: 80, right: -12, bottom: 20 }
 
   let height = 500 - margin.top - margin.bottom
   let width = 800 - margin.left - margin.right
@@ -193,6 +193,7 @@ import * as topojson from 'topojson'
     .attr('d', path)
     .attr('fill', '#E0E0E0')
 
+//add region label
   mapGroup
     .append('g')
     .selectAll('.province-label')
@@ -200,7 +201,20 @@ import * as topojson from 'topojson'
     .enter()
     .append('text')
     .attr('class', 'province-label')
-    .text(d => d.properties.NAME_1)
+    // .text(d => d.properties.NAME_1)
+    .text(d=> {
+      if (d.properties.NAME_1 === 'Qinghai') {
+        return 'Northwest'
+      } else if (d.properties.NAME_1 === 'Sichuan') {
+        return 'Southwest'
+      } else if (d.properties.NAME_1 === 'Hunan') {
+        return 'South Central'
+      } else if (d.properties.NAME_1 === 'Zhejiang') {
+        return 'East'
+      } else if (d.properties.NAME_1 === 'Beijing') {
+        return 'North'
+      }
+    })
     .attr('transform', d => {
       // hey d3, find the middle of this shape
       // d3.geoCentroid(d)
@@ -209,7 +223,7 @@ import * as topojson from 'topojson'
     })
     .attr('text-anchor', 'middle')
     .attr('alignment-baseline', 'middle')
-    .attr('font-size', 10)
+    .attr('font-size', 15)
     .attr('opacity', 0)
 
 //draw circle on the map
@@ -220,13 +234,39 @@ import * as topojson from 'topojson'
     .enter()
     .append('circle')
     .attr('class', 'relics')
-    .attr('r', 2) 
+    .attr('r', 1) 
     .attr('opacity', 0.6)
     .attr('fill', '#4f2925')
     .attr('transform', d => {
       let coords = projection([d.longitude, d.latitude])
       return `translate(${coords})`
     })   
+
+// Add button icons
+  svg
+    .append('image')
+    .attr('x', 136)
+    .attr('y', -45)
+    .attr("xlink:href",require('./bar.svg'))
+    .attr('width', 25)
+    .attr('weight',25)
+    .attr('opacity', 0.75)
+
+  svg
+    .append('image')
+    .attr('x', 245)
+    .attr('y', -45)
+    .attr("xlink:href",require('./china.svg'))
+    .attr('width', 30)
+    .attr('height', 30)
+
+  svg
+    .append('image')
+    .attr('x', 352)
+    .attr('y', -45)
+    .attr("xlink:href",require('./china.svg'))
+    .attr('width', 30)
+    .attr('height', 30)
 
 // BAR PART
 // GROUP BY province and get the relics number for each province
@@ -267,9 +307,8 @@ import * as topojson from 'topojson'
         .transition()
         .duration(1000)
         .attr('transform', d => {
-          var yPosition = yPositionScale(d.province_en) + yPositionScale.bandwidth() / 2
-          // console.log(d.province_en)
-          return `translate(80,${yPosition})`
+          var yPosition = yPositionScale(d.province_en) + yPositionScale.bandwidth() / 2 
+            return `translate(80,${yPosition})`
         })
         .transition()
         .attr('opacity', 0)

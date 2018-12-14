@@ -119,23 +119,23 @@ var popup = new mapboxgl.Popup({
       _map.addControl (new mapboxgl.NavigationControl ());
 
 
-    var layers = ['Architecture before 1912', 'Ruins', 'Architecture after 1912',
-                 'Tomb', 'Cave temple and carving','Others'];
-    var colors = ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f"];
+    // var layers = ['Architecture before 1912', 'Ruins', 'Architecture after 1912',
+    //              'Tomb', 'Cave temple and carving','Others'];
+    // var colors = ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f"];
 
-    for (i = 0; i < layers.length; i++) {
-      var layer = layers[i];
-      var color = colors[i];
-      var item = document.createElement('div');
-      var key = document.createElement('span');
-      key.className = 'legend-key';
-      key.style.backgroundColor = color;
-      var value = document.createElement('span');
-      value.innerHTML = layer;
-      item.appendChild(key);
-      item.appendChild(value);
-      legend.appendChild(item);
-    }
+    // for (i = 0; i < layers.length; i++) {
+    //   var layer = layers[i];
+    //   var color = colors[i];
+    //   var item = document.createElement('div');
+    //   var key = document.createElement('span');
+    //   key.className = 'legend-key';
+    //   key.style.backgroundColor = color;
+    //   var value = document.createElement('span');
+    //   value.innerHTML = layer;
+    //   item.appendChild(key);
+    //   item.appendChild(value);
+    //   legend.appendChild(item);
+    // }
 
 
     });

@@ -70,11 +70,11 @@
         font-weight: bold;
       }
 
-        em {
+      em {
           color: #f7545d;
         }
 
-        text {
+      text {
           color: black;
           font-weight: 400;
        }
@@ -137,6 +137,7 @@
       }
 
       .bg1 {
+/*        background-image: url(http://7q5evw.com1.z0.glb.clouddn.com/images/article/Fi8lzynPsi5a33jHgUyEIHPAqc69.jpg?imageView2/1/w/1556/h/914);*/
         background-image: url(../images/bg.jpg);
         z-index:1;
         background-size: cover;
@@ -171,69 +172,45 @@
         width: 100%;
       }
             
-      .tooltip {  
-        position: absolute;     
-        text-align: center;             
-        padding: 10px;      
-        font-family: 'Open Sans', sans-serif; 
-        font: 14px sans-serif;    
-        background-color: #c4a892;  
-        border: 0px;    
-        border-radius: 8px;     
-        pointer-events: none;
-        vertical-align: middle;
-      }
+        .tooltip {  
+          position: absolute;     
+          text-align: center;             
+          padding: 10px;      
+          font-family: 'Open Sans', sans-serif; 
+          font: 14px sans-serif;    
+          background-color: #c4a892;  
+          border: 0px;    
+          border-radius: 8px;     
+          pointer-events: none;
+          vertical-align: middle;
+        }
 
-      .map-overlay {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.8);
-        margin-right: 10px;
-        font-family: 'Source Sans Pro', sans-serif;
-        overflow: auto;
-        border-radius: 3px;
-      }
+        #map {
+          position: relative;
+        }
 
-      #legend {
-        padding: 15px;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-        line-height: 18px;
-        height: 18 50px;
-        margin-top: 100px;
-        margin-bottom: -820px;
-        margin-right: 240px;
-        width: 200px;
-        z-index:1;
-        font: 400 13px 'Helvetica Neue', Sans-serif;
-        text-anchor: middle;
-      }
-
-      .legend-key {
-        font-family: 'Source Sans Pro', sans-serif;
-        display: inline-block;
-        border-radius: 80%;
-        width: 8px;
-        height:8px;
-        margin-right: 5px;
-        margin-left: 5px; 
-        border:0.45px solid black; 
-      }
+        #legend {
+          width: 200px; 
+          position: absolute; 
+          bottom: 28px; 
+          right: 8px;
+          z-index: 3;
+        }
 
            /* Set the sticky things 2% from the top */
 
-          .sticky {
+        .sticky {
             position: -webkit-sticky;
             position: sticky;
             top: 0;
           }
 
           /* Minimum height of 70% of the screen */
-          .step {
+        .step {
             min-height: 75vh;
           }
 
-          .step > p {
+        .step > p {
 /*            background: rgba(255,255,255,0.9);*/
 /*            background: rgb(79, 70, 89);*/
             padding: 10px 0;

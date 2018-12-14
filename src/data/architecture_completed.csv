@@ -538,7 +538,7 @@ longitude,latitude,address,batch,classification,name,province,add_detail,era_cn,
 116.736899347,33.693204649,安徽省濉溪县,第五批,古遗址,柳孜运河码头遗址,安徽省,安徽省濉溪县柳孜运河码头遗址,唐,14,Tang dynasty,Ancient ruins,763,Liuyi Canal Wharf Ruins,56.0,13.97,4.008589835361489,Anhui
 128.23088483200002,43.3237042501,吉林省延边朝鲜族自治州敦化县,第一批,古墓葬,六顶山古墓群,吉林省,吉林省延边朝鲜族自治州敦化县六顶山古墓群,唐,14,Tang dynasty,Ancient tomb,763,Liudingshan Ancient Tombs,33.0,18.74,1.7609391675560302,Jilin
 107.22919906700001,31.929882550100004,四川省通江县,第六批,石窟寺及石刻,通江千佛岩石窟,四川省,四川省通江县通江千佛岩石窟,唐,14,Tang dynasty,Cave temple and stone carving,763,Tongjiang Thousand Buddha Caves,134.0,48.14,2.7835479850436227,Sichuan
-99.847377149,26.361595454099998,剑川县云南省大理白族自治州,第一批,石窟寺及石刻,石钟山石窟,,剑川县云南省大理白族自治州石钟山石窟,唐,14,Tang dynasty,Cave temple and stone carving,763,Shizhongshan Grottoes,,,,
+99.847377149,26.361595454099998,剑川县云南省大理白族自治州,第一批,石窟寺及石刻,石钟山石窟,云南省,剑川县云南省大理白族自治州石钟山石窟,唐,14,Tang dynasty,Cave temple and stone carving,763,Shizhongshan Grottoes,75.0,,,Yunan
 103.550464444,29.7563602226,四川省夹江县,第六批,石窟寺及石刻,夹江千佛岩石窟,四川省,四川省夹江县夹江千佛岩石窟,唐,14,Tang dynasty,Cave temple and stone carving,763,Jiajiang Qianfo Grottoes,134.0,48.14,2.7835479850436227,Sichuan
 112.947929926,34.512389199,河南省登封市,第四批,古建筑,初祖庵及少林寺塔林,河南省,河南省登封市初祖庵及少林寺塔林,唐,14,Tang dynasty,Ancient architecture,763,The ancestral temple and the Shaolin Temple Tallinn,188.0,16.7,11.257485029940119,Henan
 104.372407917,29.3989784967,四川省荣县,第六批,石窟寺及石刻,荣县大佛石窟,四川省,四川省荣县荣县大佛石窟,唐,14,Tang dynasty,Cave temple and stone carving,763,Rongxian Big Buddha Grottoes,134.0,48.14,2.7835479850436227,Sichuan
