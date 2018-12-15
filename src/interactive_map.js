@@ -60,11 +60,11 @@ var popup = new mapboxgl.Popup({
         
         var detail = e.features[0].properties
         // console.log('Detail is', detail)
-           title = e.features[0].properties.name_en
+        var  title = e.features[0].properties.name_en
         // console.log('Title is', title)
-           era = e.features[0].properties.era_en
-           address = e.features[0].properties.province_en
-           type = e.features[0].properties.classification_en
+        var   era = e.features[0].properties.era_en
+        var   address = e.features[0].properties.province_en
+        var  type = e.features[0].properties.classification_en
 
         var layout = "<div class='g-popup-line-1'>" + title + "</div>" + 
                      "<div class='g-popup-divider'></div>" +
